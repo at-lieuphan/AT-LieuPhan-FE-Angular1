@@ -14,4 +14,5 @@
   background-color: rgb(202, 154, 51);
   color: #ffff;
   border-radius: 5px;
+  font-size: map-get($map: $font-size, $key: font-lg);
 }
