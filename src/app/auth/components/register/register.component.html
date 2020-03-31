@@ -1,0 +1,47 @@
+<div class="container">
+  <section class="section-register pd-4 d-flex flex-col mg-auto ">
+    <h2 class="title-register d-flex jc-center">REGISTER</h2>
+    <form action="" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+      <div class="form-group">
+        <label for="">Full Name:</label>
+        <input type="text" class="form-control mt-2 mb-2" name="fullname" [(ngModel)]="fullname" #name="ngModel" minlength="10" required>
+        <div class="log-error" *ngIf="name.invalid && (name.dirty || name.touched)">Please choose min legth than 10!</div>
+      </div>
+      <div class="form-group">
+        <label for="">Email address:</label>
+        <input type="email" class="form-control mt-2 mb-2" name="email" [(ngModel)]="email" #emailAddress="ngModel" required>
+        <div class="log-error" *ngIf="emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)">Required!</div>
+      </div>
+      <div class="form-group">
+        <label for="">Address:</label>
+        <div class="address-group d-flex flex-nowrap mt-2 mb-2" ngModelGroup="address">
+          <div>
+            <input type="text" class="form-control mr-2" placeholder="Home number" name="homenumber" [(ngModel)]="homeNumber" #home="ngModel" required>
+            <div class="log-error" *ngIf="home.invalid && (home.dirty || home.touched)">Required!</div>
+          </div>
+          <div>
+            <input type="text" class="form-control mr-2" placeholder="Street name" name="streetname" [(ngModel)]="streetName" #street="ngModel" required> 
+            <div class="log-error" *ngIf="street.invalid && (street.dirty || street.touched)">Required!</div>
+          </div>
+          <div>
+            <input type="text" class="form-control" placeholder="City" name="cityname" [(ngModel)]="city" #cityName="ngModel" required>
+            <div class="log-error" *ngIf="cityName.invalid && (cityName.dirty || cityName.touched)">Required!</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Password:</label>
+        <input type="password" class="form-control mt-2 mb-2" name="password" [(ngModel)]="passWord" #pass="ngModel" required>
+        <div class="log-error" *ngIf="pass.invalid && (pass.dirty || pass.touched)">Required!</div>
+      </div>
+      <div class="form-group">
+        <label for="">Config password:</label>
+        <input type="password" class="form-control mt-2 mb-2" name="passconf" [(ngModel)]="passConfig" #passConf="ngModel" required>
+        <div class="log-error" *ngIf="passConf.invalid && (passConf.dirty || passConf.touched)">Required!</div>
+      </div>
+      <div>
+        <button class="btn btn-sign d-flex mg-auto" [disabled]="registerForm.invalid">Sign Up</button>
+      </div>
+    </form>
+  </section>
+</div>

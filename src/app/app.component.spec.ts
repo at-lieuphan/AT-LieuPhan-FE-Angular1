@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Angular-day5'`, () => {
+  it(`should have as title 'Angular-d6'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Angular-day5');
+    expect(app.title).toEqual('Angular-d6');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Angular-day5 app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Angular-d6 app is running!');
   });
 });
