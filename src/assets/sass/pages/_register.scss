@@ -1,0 +1,18 @@
+.section-register {
+  width: 50%;
+  box-shadow: 2px 2px 10px map-get($map: $color, $key: primary);
+  border-radius: 20px;
+}
+
+.title-register {
+  color: map-get($map: $color, $key: primary);
+  font-family: map-get($map: $font, $key: secondary);
+  font-weight: bolder;
+}
+
+.btn-sign {
+  background-color: rgb(202, 154, 51);
+  color: #ffff;
+  border-radius: 5px;
+  font-size: map-get($map: $font-size, $key: font-lg);
+}
