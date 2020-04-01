@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { checkPass } from 'src/app/check/checkPass';
 
 @Component({
   selector: 'app-register-form',
@@ -25,8 +26,7 @@ export class RegisterFormComponent implements OnInit {
         this.fb.control(''),
         this.fb.control('')
       ])
-
-    })
+    }, { validators: this.checkPasswords})
   }
 
   get name() {
@@ -59,6 +59,12 @@ export class RegisterFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registerForm.value);
+  }
+
+  checkPasswords(group: FormGroup) {
+    let pass = group.get('pass').value;
+    let confirmPass = group.get('passCof').value;
+    return pass === confirmPass ? null : { notSame: true }
   }
 
 }

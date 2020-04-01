@@ -5,6 +5,11 @@
   border-radius: 20px;
 }
 
+.page-register-form {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .title-register {
   color: map-get($map: $color, $key: primary);
   font-family: map-get($map: $font, $key: secondary);
