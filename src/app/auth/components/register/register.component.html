@@ -1,5 +1,7 @@
-<div class="container">
+<section class="page-register-form">
+  <h2></h2>
   <section class="section-register pd-4 d-flex flex-col mg-auto ">
+    <div class="container">
     <h2 class="title-register d-flex jc-center">REGISTER</h2>
     <form action="" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
       <div class="form-group">
@@ -43,5 +45,6 @@
         <button class="btn btn-sign d-flex mg-auto" [disabled]="registerForm.invalid">Sign Up</button>
       </div>
     </form>
+    </div>
   </section>
-</div>
+</section>
