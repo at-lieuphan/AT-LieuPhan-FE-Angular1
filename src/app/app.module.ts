@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './share/components/header/header.component';
 import { FooterComponent } from './share/components/footer/footer.component';
 import { RegisterComponent } from './auth/components/register/register.component'; 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BannerComponent } from './share/components/banner/banner.component';
+import { RegisterFormComponent } from './auth/components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,13 @@ import { BannerComponent } from './share/components/banner/banner.component';
     HeaderComponent,
     FooterComponent,
     BannerComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

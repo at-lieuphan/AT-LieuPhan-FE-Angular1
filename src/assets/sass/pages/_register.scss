@@ -16,3 +16,10 @@
   border-radius: 5px;
   font-size: map-get($map: $font-size, $key: font-lg);
 }
+
+.btn-primary {
+  background-color: rgb(231, 195, 96);
+  color: #ffff;
+  border-radius: 5px;
+  font-size: map-get($map: $font-size, $key: font-lg);
+}
