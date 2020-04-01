@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-register-form',
@@ -11,18 +11,8 @@ export class RegisterFormComponent implements OnInit {
   constructor(private fb: FormBuilder) {  }
 
   ngOnInit(): void {
-    // this.registerForm = new FormGroup({
-    //   name: new FormControl(''),
-    //   email: new FormControl(''),
-    //   address: new FormGroup({
-    //     home: new FormControl(''),
-    //     street: new FormControl(''),
-    //     city: new FormControl('')
-    //   }),
-      
-    // })
     this.registerForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(10)]],
       email: ['', Validators.required],
       address: this.fb.group({
         home: ['', Validators.required],
@@ -39,8 +29,28 @@ export class RegisterFormComponent implements OnInit {
     })
   }
 
+  get name() {
+    return this.registerForm.get('name');
+  }
+
+  get email() {
+    return this.registerForm.get('email');
+  }
+
   get skills() {
     return this.registerForm.get('skills') as FormArray;
+  }
+
+  get address() {
+    return this.registerForm.get('address') as FormGroup;
+  }
+
+  get pass() {
+    return this.registerForm.get('pass');
+  }
+
+  get passCof() {
+    return this.registerForm.get('passCof');
   }
 
   addSkill() {
