@@ -1,0 +1,11 @@
+.title-page {
+  color: map-get($map: $color, $key: primary);
+}
+
+.title-detail {
+  font-style: italic;
+}
+
+.title-item {
+  color: rgb(250, 159, 107);
+}
