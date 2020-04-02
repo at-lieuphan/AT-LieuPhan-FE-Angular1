@@ -1,4 +1,4 @@
-<div>
+<section class="page-register-form">
   <section class="section-register pd-4  d-flex mg-auto">
     <div class="container">
       <h2 class="title-register d-flex jc-center txt-uppercase">Register</h2>
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="form-group" formArrayName="skills">
-          <label for="">Skills</label>
+          <label for="">Skills:</label>
           <div class="d-flex flex-wrap align-center">
             <div *ngFor="let skill of skills.controls; let i=index" >
               <input class="form-control mr-2 mb-2" type="text" [formControlName]="i">
@@ -65,5 +65,5 @@
       </form>
     </div>
   </section>
-</div>
+</section>
 
