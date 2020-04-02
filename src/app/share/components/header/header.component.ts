@@ -14,6 +14,6 @@ export class HeaderComponent implements OnInit {
   }
 
   routerNews() {
-    this.router.navigate(['/news'], { queryParams: {'page':'1'}});
+    this.router.navigate(['/news'], { queryParams: {'page':1}});
   }
 }

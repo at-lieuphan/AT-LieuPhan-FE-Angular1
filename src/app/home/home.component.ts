@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     description: 'Color white, handmade embroidery',
     price: 260
   }
-  ]
+  ];
   constructor() { }
 
   ngOnInit(): void {
