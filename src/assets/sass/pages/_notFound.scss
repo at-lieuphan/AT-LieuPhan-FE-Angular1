@@ -1,0 +1,9 @@
+.not-found {
+  .content {
+    font-style: italic;
+    &-link {
+      color: rgb(248, 165, 56);
+      line-height: 1.6;
+    }
+  }
+}
