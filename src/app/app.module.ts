@@ -10,6 +10,7 @@ import { BannerComponent } from './share/components/banner/banner.component';
 import { RegisterFormComponent } from './auth/components/register-form/register-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     BannerComponent,
     RegisterComponent,
     RegisterFormComponent,
-    HomeComponent
+    HomeComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
