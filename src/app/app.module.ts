@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './share/components/header/header.component';
 import { FooterComponent } from './share/components/footer/footer.component';
@@ -11,7 +10,12 @@ import { RegisterFormComponent } from './auth/components/register-form/register-
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
-
+import { AccountComponent } from './account/components/account/account.component';
+import { DashboardComponent } from './account/components/dashboard/dashboard.component';
+import { ProfileComponent } from './account/components/profile/profile.component';
+import { AccountModule } from './account/account.module';
+import { LoginComponent } from './auth/components/login/login.component';
+import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +25,18 @@ import { NewsComponent } from './news/news.component';
     RegisterComponent,
     RegisterFormComponent,
     HomeComponent,
-    NewsComponent
+    NewsComponent,
+    LoginComponent,
+    //AccountComponent,
+    //DashboardComponent,
+    //ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    AccountModule,
+    AuthModule,
     AppRoutingModule
   ],
   providers: [],
