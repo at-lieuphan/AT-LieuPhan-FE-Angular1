@@ -1,9 +1,11 @@
 <section class="account-page mt-4 mb-4">
   <div class="container">
     <ul class="menu-list d-flex">
-      <li class="menu-item pd-1 btn-primary"><a href="" routerLink="/account/dashboard" class="menu-item-link">Dashboard</a></li>
-      <li class="menu-item pd-1 btn-primary"><a href="" routerLink="/account/profile" class="menu-item-link">Profile</a></li>
+      <li class="menu-item pd-1 btn-primary btn-dashboard d-flex jc-center">
+        <a routerLink="./dashboard" routerLinkActive="active" routerLinkActiveOptions="exact: true" class="menu-item-link">Dashboard</a></li>
+      <li class="menu-item pd-1 btn-primary btn-profile d-flex jc-center">
+        <a routerLink="./profile" routerLinkActive="active" routerLinkActiveOptions="exact: true" class="menu-item-link">Profile</a></li>
     </ul>
-    <!-- <router-outlet></router-outlet> -->
+    <router-outlet></router-outlet>
   </div>
 </section>

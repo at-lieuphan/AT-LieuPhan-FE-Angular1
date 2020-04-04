@@ -4,6 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { RegisterFormComponent } from './auth/components/register-form/register-form.component';
 import { NotFoundComponent } from './share/components/not-found/not-found.component';
+import { AccountModule } from './account/account.module';
+import { from } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,7 +16,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
