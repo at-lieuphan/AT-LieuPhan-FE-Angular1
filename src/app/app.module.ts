@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './share/components/header/header.component';
 import { FooterComponent } from './share/components/footer/footer.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BannerComponent } from './share/components/banner/banner.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';

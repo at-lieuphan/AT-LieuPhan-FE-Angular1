@@ -21,4 +21,9 @@ export class AuthService {
     }
     return this.isLogin;
   }
+
+  logOut() {
+    localStorage.removeItem('user');
+    this.isLogin = false;
+  }
 }

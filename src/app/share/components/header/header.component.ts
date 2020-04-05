@@ -8,8 +8,7 @@ import { AuthService } from 'src/app/auth/service/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  // isLogin: boolean;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
   
   ngOnInit(): void {
     
@@ -19,4 +18,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/news'], { queryParams: {page:1}});
   }
 
+  logout() {
+    this.authService.logOut();
+  }
 }
