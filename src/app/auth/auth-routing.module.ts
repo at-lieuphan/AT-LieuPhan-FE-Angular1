@@ -7,8 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AuthGuard } from './service/auth.guard';
 
 export const authRoutes: Routes = [
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterFormComponent}
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterFormComponent }
 ];
 
 @NgModule({

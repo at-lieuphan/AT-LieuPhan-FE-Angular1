@@ -22,7 +22,7 @@ export const accountRoutes: Routes = [
         canDeactivate: [ProfileCanDeactivate],
         resolve: {
           userData: DataResolver
-        }        
+        }
       }
     ]
   }
@@ -34,5 +34,5 @@ export const accountRoutes: Routes = [
     RouterModule.forChild(accountRoutes)],
   exports: [RouterModule],
   providers: [AuthGuard, DataResolver, ProfileCanDeactivate]
-  })
-export  class AccountRoutingModule { }
+})
+export class AccountRoutingModule { }

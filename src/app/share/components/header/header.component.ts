@@ -1,5 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/service/auth.service';
 @Component({
@@ -11,7 +10,6 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) { }
   
   ngOnInit(): void {
-    
   }
 
   routerNews() {

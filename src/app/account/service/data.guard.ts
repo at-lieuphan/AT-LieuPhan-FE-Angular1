@@ -7,12 +7,12 @@ import { delay } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataResolver implements Resolve<any> {
-  constructor(){}
+  constructor() { }
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<any>|Promise<any>|any {
-    return of({data: 'Lieuphan'}).pipe(delay(3000));
+  ): Observable<any> | Promise<any> | any {
+    return of({ data: 'Lieuphan' }).pipe(delay(3000));
   }
-  
+
 }

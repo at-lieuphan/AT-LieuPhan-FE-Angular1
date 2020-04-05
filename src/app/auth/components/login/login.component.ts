@@ -14,15 +14,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      name:['', [Validators.required, Validators.minLength(4)]],
-      password:['', [Validators.required]]
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required]]
     })
   }
 
   onLogin() {
     this.authService.login(this.loginForm.controls.name.value, this.loginForm.controls.password.value);
     console.log(this.authService.isLogin)
-    if(this.authService.isLogin === true) {
+    if (this.authService.isLogin === true) {
       this.router.navigateByUrl('');
     }
     else {
