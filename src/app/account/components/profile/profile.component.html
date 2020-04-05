@@ -14,18 +14,18 @@
       <h2 class="title-form d-flex jc-center mg-2">Profile account</h2>
       <div class="form-group">
         <label for="">Full name:</label>
-        <input class="form-control" type="text" (keyup)="checkType()">
+        <input class="form-control" type="text" (input)="checkType()">
       </div>
       <div class="form-group">
         <label for="">Email:</label>
-        <input class="form-control" type="text" (keyup)="checkType()">
+        <input class="form-control" type="text" (input)="checkType()">
       </div>
       <div class="form-group">
         <label>Address:</label>
         <div class="d-flex">
-          <input class="form-control mr-2" type="text">
-          <input class="form-control mr-2" type="text">
-          <input class="form-control mr-2" type="text">
+          <input class="form-control mr-2" type="text" (input)="checkType()">
+          <input class="form-control mr-2" type="text" (input)="checkType()">
+          <input class="form-control mr-2" type="text" (input)="checkType()">
         </div>
       </div>
       <div class="form-group">
@@ -33,21 +33,21 @@
         <div class="d-flex">
           <div class="mr-4 pd-2 d-flex align-center">
             <label for="">Male:</label>
-            <input type="checkbox">
+            <input type="checkbox" (input)="checkType()">
           </div>
           <div class="mr-4 pd-2 d-flex align-center">
             <label for="">FeMale:</label>
-            <input type="checkbox">
+            <input type="checkbox" (input)="checkType()">
           </div>
           <div class="mr-4 pd-2 d-flex align-center">
             <label for="">Other:</label>
-            <input type="checkbox">
+            <input type="checkbox" (input)="checkType()">
           </div>
         </div>
       </div>
       <div class="form-group">
         <label for="">Phone:</label>
-        <input class="form-control" type="number" (keyup)="checkType()">
+        <input class="form-control" type="number" (input)="checkType()">
       </div>
       <div>
         <button class="btn btn-primary">SAVE</button>

@@ -32,6 +32,7 @@ export const accountRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forChild(accountRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard, DataResolver, ProfileCanDeactivate]
   })
 export  class AccountRoutingModule { }

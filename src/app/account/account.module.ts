@@ -6,6 +6,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AccountRoutingModule } from './account-routing.module';
 import { AccountComponent } from './components/account/account.component';
+import { AuthModule } from '../auth/auth.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { AccountComponent } from './components/account/account.component';
   ],
   imports: [
     CommonModule,
+    AuthModule,
     AccountRoutingModule
   ],
   exports: []
