@@ -11,6 +11,7 @@ import { ProfileCanDeactivate } from './service/profile.candeactive';
 export const accountRoutes: Routes = [
   {
     path: 'account', component: AccountComponent,
+    // not delete account
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     children: [
