@@ -9,6 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { AccountModule } from './account/account.module';
 import { AuthModule } from './auth/auth.module';
+import { ApiService } from './core/services/api.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './core/helpers/jwt.interceptor';
+import { LoadingService } from './auth/service/loading.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +25,16 @@ import { AuthModule } from './auth/auth.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AccountModule,
     AuthModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

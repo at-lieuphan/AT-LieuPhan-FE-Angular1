@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private activeRouter: ActivatedRoute) { }
   isTyping: boolean = false;
+  
   ngOnInit(): void {
     console.log(this.activeRouter.snapshot.data);
   }

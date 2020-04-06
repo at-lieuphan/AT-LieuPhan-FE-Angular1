@@ -9,7 +9,6 @@ import { from } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', 
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
@@ -19,8 +18,7 @@ const routes: Routes = [
   { path: 'account',
     loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
   },
-  {
-    path: 'auth',
+  { path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   { path: '**', component: NotFoundComponent }
