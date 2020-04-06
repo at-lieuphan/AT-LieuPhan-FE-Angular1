@@ -1,0 +1,38 @@
+.img-dashboard {
+  width: 120%;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+}
+
+.btn-dashboard {
+  width: 140px;
+}
+
+.dashboard-page {
+  .menu-list {
+    background-color: rgb(255, 232, 129);
+    border-radius: 5px;
+  }
+  .menu-item {
+    width: 130px;
+  }
+}
+
+.profile-page {
+  .title-form {
+    color: map-get($map: $color, $key: primary);
+  }
+  .img-account {
+    width: 130px;
+    padding: 10px;
+  }
+  .profile-left {
+    background-color: rgb(255, 232, 129);
+    border-radius: 5px;
+  }
+  .profile-right {
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    width: 1110px;
+  }
+}

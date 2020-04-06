@@ -14,14 +14,13 @@
           </li>
           <li class="header-top-item"><a href="">Blog</a></li>
           <li class="header-top-item"><a href="">Help</a></li>
-          <li class="dropdown header-top-item">
-            <a class="dropbtn backgroud" href=""><i class="fa fa-user"></i>Sign In <i class="fa fa-caret-down"></i></a>
-            <ul class="dropdown-content">
-              <li class="dropdown-content-item"><a href="#">Profile user</a></li>
-              <li class="dropdown-content-item"><a href="#">Logout</a></li>
-            </ul>
+          <li class="header-top-item">
+            <a class="backgroud" href="" routerLink="login" routerLinkActive="active" routerLinkActiveOptions="exact: true"><i class="fa fa-user"></i>Sign In<i class="fa fa-caret-down"></i></a>
           </li>
-          <li class="header-top-item"><a href="" routerLink="register">Sign Up</a></li>
+          <li class="header-top-item">
+            <a class="backgroud" href="" routerLink="home" routerLinkActive="active" routerLinkActiveOptions="exact: true" (click)="logout()"><i class="fa fa-user"></i>Sign Out<i class="fa fa-caret-down"></i></a>
+          </li>
+          <li class="header-top-item"><a href="" routerLink="register" routerLinkActive="active" routerLinkActiveOptions="exact: true" >Sign Up</a></li>
           <li class="header-top-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
         </ul>
       </section>
@@ -36,7 +35,8 @@
             routerLinkActive="active" routerLinkActiveOptions="exact: true" href="">Home</a></li>
           <li class="menu-item pd-2"><a class="menu-item-link" routerLink="news" 
             routerLinkActive="active" routerLinkActiveOptions="exact: true" href="" (click)="routerNews()">News</a></li>
-          <li class="menu-item pd-2"><a class="menu-item-link" href="">Pay</a></li>
+          <li class="menu-item pd-2"><a class="menu-item-link" routerLink="account" 
+            routerLinkActive="active" routerLinkActiveOptions="exact: true" href="">Account</a></li>
           <li class="menu-item pd-2"><a class="menu-item-link" href="">Contact</a></li>
           <li class="menu-item pd-2"><a class="menu-item-link" href="">Cart</a></li>
         </ul>

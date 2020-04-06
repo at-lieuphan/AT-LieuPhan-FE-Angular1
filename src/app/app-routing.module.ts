@@ -4,17 +4,32 @@ import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { RegisterFormComponent } from './auth/components/register-form/register-form.component';
 import { NotFoundComponent } from './share/components/not-found/not-found.component';
+import { AccountModule } from './account/account.module';
+import { from } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'register', component: RegisterFormComponent},
-  { path: '**', component: NotFoundComponent}
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', 
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  { path: 'news',
+    loadChildren: () => import('./news/news.module').then(m => m.NewsModule)
+  },
+  { path: 'account',
+    loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
