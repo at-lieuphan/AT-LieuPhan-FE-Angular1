@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { checkPass } from 'src/app/check/checkPass';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-register-form',
@@ -9,7 +10,7 @@ import { checkPass } from 'src/app/check/checkPass';
 })
 export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -58,7 +59,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm.value);
+    this.authService.addUser(this.registerForm.value);
   }
 
   checkPasswords(group: FormGroup) {

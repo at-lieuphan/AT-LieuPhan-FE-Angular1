@@ -1,11 +1,34 @@
 import { Injectable } from '@angular/core';
+import { ApiService, ENDPOINT, API_DOMAIN } from 'src/app/core/services/api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   isLogin: boolean = false;
-  constructor() { }
+  constructor(private apiService: ApiService) { }
+
+  getAllUser() {
+    this.apiService.get(ENDPOINT.users, { page: 2 }).subscribe(e => {
+      console.log(e);
+    })
+    this.apiService.getAssets('assets/data/db.json').subscribe(e => {
+      console.log(e);
+    })
+  }
+
+  getAuthorizationToken() {
+    if (this.isLogin === true) {
+      return 'loginTrue';
+    }
+  }
+
+  addUser(object: Object) {
+    this.apiService.post(ENDPOINT.users, object).subscribe(e => {
+      console.log(e);
+    })
+  }
+  // làm sao để post đc lên reqres
 
   login(userName: string, passWord: string) {
     let user = {
