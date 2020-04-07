@@ -1,11 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { NewsComponent } from './news/news.component';
-import { RegisterFormComponent } from './auth/components/register-form/register-form.component';
-import { NotFoundComponent } from './share/components/not-found/not-found.component';
-import { AccountModule } from './account/account.module';
-import { from } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
@@ -21,7 +15,11 @@ const routes: Routes = [
   { path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
-  { path: '**', component: NotFoundComponent }
+  { path: 'not-found',
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
+  },
+  { path: '**', pathMatch: 'full', redirectTo: './not-found'
+  }
 ];
 
 @NgModule({

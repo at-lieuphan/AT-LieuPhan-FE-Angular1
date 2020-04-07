@@ -12,7 +12,6 @@ import { AuthModule } from './auth/auth.module';
 import { ApiService } from './core/services/api.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './core/helpers/jwt.interceptor';
-import { LoadingService } from './auth/service/loading.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { LoadingService } from './auth/service/loading.service';
   ],
   providers: [
     ApiService,
-    LoadingService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]

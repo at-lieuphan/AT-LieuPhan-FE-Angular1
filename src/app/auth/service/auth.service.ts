@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApiService, ENDPOINT } from 'src/app/core/services/api.service';
+import { ApiService, ENDPOINT, API_DOMAIN } from 'src/app/core/services/api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +17,14 @@ export class AuthService {
     })
   }
 
+  getAuthorizationToken() {
+    if(this.isLogin === true) {
+      return 'loginTrue';
+    }
+  }
+
   addUser(object: Object) {
-    this.apiService.post(ENDPOINT.users, object).subscribe(e => {
+    this.apiService.put(ENDPOINT.users, object).subscribe(e => {
     console.log(e);
     })
   }

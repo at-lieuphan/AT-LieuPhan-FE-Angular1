@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/service/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,11 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private activeRouter: ActivatedRoute) { }
+  constructor(private activeRouter: ActivatedRoute, private authService: AuthService) { }
   isTyping: boolean = false;
-  
+  resultUser: any;
+
   ngOnInit(): void {
     console.log(this.activeRouter.snapshot.data);
+    this.resultUser = this.authService.getAllUser();
+    console.log(this.resultUser);
   }
 
   checkType() {
