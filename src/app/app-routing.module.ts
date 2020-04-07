@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '', 
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
