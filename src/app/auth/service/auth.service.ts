@@ -35,7 +35,6 @@ export class AuthService {
       userName: userName,
       password: passWord
     }
-    this.getAllUser();
     if (userName === 'admin' && passWord === 'admin') {
       localStorage.setItem('user', JSON.stringify(user));
       this.isLogin = true;
