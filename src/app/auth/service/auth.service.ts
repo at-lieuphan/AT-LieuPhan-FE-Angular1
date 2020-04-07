@@ -9,7 +9,7 @@ export class AuthService {
   constructor(private apiService: ApiService) { }
 
   getAllUser() {
-    this.apiService.get(ENDPOINT.users, {page: 2}).subscribe(e => {
+    this.apiService.get(ENDPOINT.users, { page: 2 }).subscribe(e => {
       console.log(e);
     })
     this.apiService.getAssets('assets/data/db.json').subscribe(e => {
@@ -18,17 +18,17 @@ export class AuthService {
   }
 
   getAuthorizationToken() {
-    if(this.isLogin === true) {
+    if (this.isLogin === true) {
       return 'loginTrue';
     }
   }
 
   addUser(object: Object) {
-    this.apiService.put(ENDPOINT.users, object).subscribe(e => {
-    console.log(e);
+    this.apiService.post(ENDPOINT.users, object).subscribe(e => {
+      console.log(e);
     })
   }
-// làm sao để post đc lên reqres
+  // làm sao để post đc lên reqres
 
   login(userName: string, passWord: string) {
     let user = {
