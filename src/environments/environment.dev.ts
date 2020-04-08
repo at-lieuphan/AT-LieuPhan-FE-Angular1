@@ -1,4 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   api: 'https://reqres.in/api/'
+  // biến môi trường
 };
